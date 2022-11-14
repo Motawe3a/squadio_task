@@ -1,0 +1,143 @@
+.search_input {
+  position: fixed;
+  top: 7%;
+  margin: 0 10px;
+  z-index: 6;
+  right: 2%;
+}
+
+::ng-deep .mat-tab-header {
+  position: fixed !important;
+  top: 100px;
+  z-index: 7;
+
+  .mat-tab-label-content {
+    color: #241081;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .mat-tab-label-active::after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    bottom: 0px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 40%;
+    background: #EF9363;
+  }
+}
+
+.mat-tab-group {
+  align-items: center;
+}
+
+.card_wrapper {
+  display: flex;
+  min-width: 1200px;
+
+  .example-card {
+    max-width: 228px;
+    display: flex;
+    flex-direction: column;
+
+    .mat-card-content {
+      flex: 1;
+    }
+
+    &.all {
+      background-color: #EF9363;
+      margin: 0 15px;
+    }
+
+    &.user {
+      background-color: #CFC2DE;
+      margin: 0 15px;
+    }
+  }
+}
+
+.albums_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+
+  &_title {
+    color: #003A70;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  &_slider {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+
+    .slider_main {
+      width: 90%;
+      display: flex;
+      margin-left: 37px;
+      position: absolute;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: #CECFD3;
+        position: relative;
+        margin: 0 12px;
+
+        .mat-card-content {
+          flex: 1;
+        }
+      }
+    }
+
+    .button_group {
+      .prev {
+        position: absolute;
+        left: 30px;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+      }
+
+      .next {
+        position: absolute;
+        right: 10px;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+.mat-card-actions {
+  text-align: end;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-start {
+  background-color: white !important;
+  color: #000;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-gap {
+  background-color: white !important;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-end {
+  background-color: white !important;
+  color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+  .card_wrapper {
+    display: inline;
+  }
+}

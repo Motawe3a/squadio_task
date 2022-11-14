@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.search_input {
+  position: fixed;
+  top: 7%;
+  margin: 0 10px;
+  z-index: 6;
+  right: 2%;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-start {
+  background-color: white !important;
+  color: #000;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-gap {
+  background-color: white !important;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-outline-end {
+  background-color: white !important;
+  color: #000;
+}
+

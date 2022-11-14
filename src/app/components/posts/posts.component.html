@@ -1,0 +1,87 @@
+<mat-form-field class="search_input" appearance="outline">
+  <input matInput type="search" placeholder="search" #search (keyup)="searchUser(search)">
+</mat-form-field>
+
+<mat-tab-group>
+  <mat-tab label="All">
+
+    <div class="card_wrapper">
+      <mat-card class="example-card all" *ngFor="let post of searchArray | slice:0:4; let i=index">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{post.body}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <img src="../../../assets/images/data_sm.png" alt="data">
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="albums_wrapper">
+
+      <span class="albums_wrapper_title">Albums</span>
+
+      <div class="albums_wrapper_slider">
+
+        <div class="slider_main">
+          <mat-card class="example-card slider item" *ngFor="let post of posts | slice:0:4; let i=index">
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+              <img src="../../../assets/images/data_sm.png" alt="data">
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="button_group">
+          <span type="button" class="prev" appPrev><img src="../../../assets/images/prev_sm.png" alt="prev"></span>
+          <span type="button" class="next" appNext><img src="../../../assets/images/next_sm.png" alt="next"></span>
+        </div>
+      </div>
+    </div>
+
+  </mat-tab>
+
+  <mat-tab label="USER 1">
+
+    <div class="card_wrapper">
+      <mat-card class="example-card user" *ngFor="let post of searchArray | slice:0:4; let i=index">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{post.body}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <img src="../../../assets/images/data_sm.png" alt="data">
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="USER 2">
+
+    <div class="card_wrapper">
+      <mat-card class="example-card user" *ngFor="let post of searchArray | slice:0:4;  let i=index">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{post.body}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <img src="../../../assets/images/data_sm.png" alt="data">
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="USER 3">
+    <div class="card_wrapper">
+      <mat-card class="example-card user" *ngFor="let post of searchArray | slice:0:4; ; let i=index">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{post.body}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <img src="../../../assets/images/data_sm.png" alt="data">
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

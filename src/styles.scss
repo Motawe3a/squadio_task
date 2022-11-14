@@ -1,1 +1,98 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material'as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$squadio: (
+    50 : #fcfcfc,
+    100 : #f7f7f9,
+    200 : #f2f1f5,
+    300 : #ecebf0,
+    400 : #e8e7ed,
+    500 : #e4e3ea,
+    600 : #e1e0e7,
+    700 : #dddce4,
+    800 : #d9d8e1,
+    900 : #d1d0db,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$squadio_task-primary: mat.define-palette($squadio);
+$squadio_task-accent: mat.define-palette(mat.$pink-palette);
+$squadio_task-warn: mat.define-palette(mat.$red-palette);
+
+$squadio_task-theme: mat.define-light-theme((color: (primary: $squadio_task-primary,
+      accent: $squadio_task-accent,
+      warn: $squadio_task-warn,
+    )));
+
+@include mat.all-component-themes($squadio_task-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-toolbar-single-row {
+  height: 150px;
+}
+
+.mat-drawer {
+  background-color: #4B3392;
+}
+
+.mat-list-item {
+  color: #fff !important;
+  transition: all 0.2s ease-in-out;
+  &.active {
+    background-color: #ED844E !important;
+    width: 70% !important;
+  }
+}
+
+.mat-header-row {
+  background-color: #E7EBF0;
+  .mat-header-cell {
+    font-weight: 600;
+    color: #0E4578;
+  }
+}
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
